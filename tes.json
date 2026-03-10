@@ -1,0 +1,728 @@
+{
+  "Nom": "Maison Familiale - VMC Double Flux",
+  "Echelle": 55.0,
+  "Etages": [
+    {
+      "Id": "etage-1",
+      "Nom": "Rez-de-Chaussée",
+      "Largeur": 15.0,
+      "Hauteur": 12.0,
+      "HauteurSousPlafond": 2.5,
+      "Murs": [
+        {
+          "Id": "77f2beca-d93a-4b92-9f0e-8b71bbd9f1d5",
+          "Debut": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "45bb2769-5f4e-44e4-956c-364dc53b903a",
+          "Debut": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "5c318fe5-7ee9-467f-9bda-71105866f61d",
+          "Debut": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "d761245b-c2e2-42a0-b2c0-99aa3c5c0fda",
+          "Debut": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "mur-1",
+          "Debut": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "mur-2",
+          "Debut": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "mur-3",
+          "Debut": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "mur-4",
+          "Debut": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "mur-5",
+          "Debut": {
+            "X": 5.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 5.0,
+            "Y": 6.0
+          },
+          "EstExterieur": false,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 6.0
+        },
+        {
+          "Id": "mur-6",
+          "Debut": {
+            "X": 0.0,
+            "Y": 6.0
+          },
+          "Fin": {
+            "X": 10.0,
+            "Y": 6.0
+          },
+          "EstExterieur": false,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 10.0
+        },
+        {
+          "Id": "mur-7",
+          "Debut": {
+            "X": 10.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 10.0,
+            "Y": 12.0
+          },
+          "EstExterieur": false,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "mur-8",
+          "Debut": {
+            "X": 10.0,
+            "Y": 8.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 8.0
+          },
+          "EstExterieur": false,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 5.0
+        }
+      ],
+      "Bouches": [
+        {
+          "Id": "bouche-1",
+          "Nom": "CUISINE",
+          "Type": 0,
+          "Diametre": 125.0,
+          "Debit": 75.0,
+          "Position": {
+            "X": 2.5,
+            "Y": 3.0
+          },
+          "Piece": "Cuisine"
+        },
+        {
+          "Id": "bouche-2",
+          "Nom": "WC RDC",
+          "Type": 0,
+          "Diametre": 80.0,
+          "Debit": 30.0,
+          "Position": {
+            "X": 7.5,
+            "Y": 3.0
+          },
+          "Piece": "WC"
+        },
+        {
+          "Id": "bouche-3",
+          "Nom": "SALON",
+          "Type": 1,
+          "Diametre": 150.0,
+          "Debit": 60.0,
+          "Position": {
+            "X": 12.5,
+            "Y": 4.0
+          },
+          "Piece": "Salon"
+        },
+        {
+          "Id": "bouche-4",
+          "Nom": "ENTREE",
+          "Type": 1,
+          "Diametre": 125.0,
+          "Debit": 45.0,
+          "Position": {
+            "X": 2.5,
+            "Y": 9.0
+          },
+          "Piece": "Entrée"
+        },
+        {
+          "Id": "porte-1",
+          "Nom": "PORTE ENTREE",
+          "Type": 2,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 0.5,
+            "Y": 12.0
+          },
+          "Piece": "Entrée"
+        },
+        {
+          "Id": "porte-2",
+          "Nom": "PORTE CUISINE",
+          "Type": 2,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 5.0,
+            "Y": 4.0
+          },
+          "Piece": "Cuisine"
+        },
+        {
+          "Id": "fenetre-1",
+          "Nom": "FENETRE SALON",
+          "Type": 3,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 15.0,
+            "Y": 3.0
+          },
+          "Piece": "Salon"
+        },
+        {
+          "Id": "fenetre-2",
+          "Nom": "FENETRE CUISINE",
+          "Type": 3,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 2.5,
+            "Y": 0.0
+          },
+          "Piece": "Cuisine"
+        },
+        {
+          "Id": "fenetre-3",
+          "Nom": "FENETRE SEJOUR",
+          "Type": 3,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 12.5,
+            "Y": 12.0
+          },
+          "Piece": "Séjour"
+        },
+        {
+          "Id": "896744ee-2923-4393-a31a-37598f7072a8",
+          "Nom": "Porte",
+          "Type": 2,
+          "Diametre": 150.0,
+          "Debit": 30.0,
+          "Position": {
+            "X": 10.8506787109375,
+            "Y": 7.9628759765625
+          },
+          "Piece": ""
+        }
+      ]
+    },
+    {
+      "Id": "etage-2",
+      "Nom": "Étage",
+      "Largeur": 15.0,
+      "Hauteur": 12.0,
+      "HauteurSousPlafond": 2.5,
+      "Murs": [
+        {
+          "Id": "3f0410c8-a355-4556-bdaa-6e1ade40e03c",
+          "Debut": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "04097497-8a69-47fe-9711-402eb6077b23",
+          "Debut": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "1ddff566-bd8d-4ddb-88dc-895dba2e706f",
+          "Debut": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "2f9aff19-6160-45f5-81ab-d9e18df0682b",
+          "Debut": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "mur-e1",
+          "Debut": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "mur-e2",
+          "Debut": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "mur-e3",
+          "Debut": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "mur-e4",
+          "Debut": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "mur-e5",
+          "Debut": {
+            "X": 0.0,
+            "Y": 6.0
+          },
+          "Fin": {
+            "X": 7.5,
+            "Y": 6.0
+          },
+          "EstExterieur": false,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 7.5
+        },
+        {
+          "Id": "mur-e6",
+          "Debut": {
+            "X": 7.5,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 7.5,
+            "Y": 12.0
+          },
+          "EstExterieur": false,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "mur-e7",
+          "Debut": {
+            "X": 11.0,
+            "Y": 6.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 6.0
+          },
+          "EstExterieur": false,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 4.0
+        },
+        {
+          "Id": "mur-e8",
+          "Debut": {
+            "X": 11.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 11.0,
+            "Y": 12.0
+          },
+          "EstExterieur": false,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        }
+      ],
+      "Bouches": [
+        {
+          "Id": "bouche-e1",
+          "Nom": "SDB ETAGE",
+          "Type": 0,
+          "Diametre": 125.0,
+          "Debit": 60.0,
+          "Position": {
+            "X": 3.5,
+            "Y": 3.0
+          },
+          "Piece": "Salle de bain"
+        },
+        {
+          "Id": "bouche-e2",
+          "Nom": "WC ETAGE",
+          "Type": 0,
+          "Diametre": 80.0,
+          "Debit": 30.0,
+          "Position": {
+            "X": 3.5,
+            "Y": 9.0
+          },
+          "Piece": "WC"
+        },
+        {
+          "Id": "bouche-e3",
+          "Nom": "CHAMBRE 1",
+          "Type": 1,
+          "Diametre": 125.0,
+          "Debit": 45.0,
+          "Position": {
+            "X": 9.0,
+            "Y": 3.0
+          },
+          "Piece": "Chambre 1"
+        },
+        {
+          "Id": "bouche-e4",
+          "Nom": "CHAMBRE 2",
+          "Type": 1,
+          "Diametre": 125.0,
+          "Debit": 45.0,
+          "Position": {
+            "X": 13.0,
+            "Y": 3.0
+          },
+          "Piece": "Chambre 2"
+        },
+        {
+          "Id": "bouche-e5",
+          "Nom": "CHAMBRE 3",
+          "Type": 1,
+          "Diametre": 125.0,
+          "Debit": 45.0,
+          "Position": {
+            "X": 13.0,
+            "Y": 9.0
+          },
+          "Piece": "Chambre 3"
+        },
+        {
+          "Id": "porte-e1",
+          "Nom": "PORTE SDB",
+          "Type": 2,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 3.5,
+            "Y": 6.0
+          },
+          "Piece": "Salle de bain"
+        },
+        {
+          "Id": "porte-e2",
+          "Nom": "PORTE CH1",
+          "Type": 2,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 7.5,
+            "Y": 3.0
+          },
+          "Piece": "Chambre 1"
+        },
+        {
+          "Id": "porte-e3",
+          "Nom": "PORTE CH2",
+          "Type": 2,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 11.0,
+            "Y": 3.0
+          },
+          "Piece": "Chambre 2"
+        },
+        {
+          "Id": "porte-e4",
+          "Nom": "PORTE CH3",
+          "Type": 2,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 11.0,
+            "Y": 9.0
+          },
+          "Piece": "Chambre 3"
+        },
+        {
+          "Id": "fenetre-e2",
+          "Nom": "FENETRE CH1",
+          "Type": 3,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 9.0,
+            "Y": 0.0
+          },
+          "Piece": "Chambre 1"
+        },
+        {
+          "Id": "fenetre-e3",
+          "Nom": "FENETRE CH2",
+          "Type": 3,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 13.0,
+            "Y": 0.0
+          },
+          "Piece": "Chambre 2"
+        },
+        {
+          "Id": "fenetre-e4",
+          "Nom": "FENETRE CH3",
+          "Type": 3,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "Position": {
+            "X": 15.0,
+            "Y": 9.0
+          },
+          "Piece": "Chambre 3"
+        },
+        {
+          "Id": "fbe9e37b-f7bc-40c9-93c5-b697753425c0",
+          "Nom": "Fenetre",
+          "Type": 3,
+          "Diametre": 150.0,
+          "Debit": 30.0,
+          "Position": {
+            "X": -0.010621337890625,
+            "Y": 2.9578424072265626
+          },
+          "Piece": ""
+        }
+      ]
+    }
+  ],
+  "EtageActifId": "etage-2",
+  "Echangeur": {
+    "Id": "4e90cd9c-2bd1-47d6-b653-a19117b5034e",
+    "Nom": "Échangeur",
+    "Type": 4,
+    "Diametre": 0.0,
+    "Debit": 0.0,
+    "Position": {
+      "X": 6.703907470703125,
+      "Y": 11.2143115234375
+    },
+    "Piece": ""
+  },
+  "PlenumExtraction": {
+    "Id": "9d4834f2-a358-431e-9d67-c01a18eea477",
+    "Nom": "Plenum Extraction",
+    "Type": 5,
+    "Diametre": 0.0,
+    "Debit": 0.0,
+    "Position": {
+      "X": 0.650682373046875,
+      "Y": 11.266204833984375
+    },
+    "Piece": ""
+  },
+  "PlenumInsufflation": {
+    "Id": "885b4a7a-c8e6-4f85-9f32-d2257507f896",
+    "Nom": "Plenum Insufflation",
+    "Type": 6,
+    "Diametre": 0.0,
+    "Debit": 0.0,
+    "Position": {
+      "X": 0.58552490234375,
+      "Y": 6.58509521484375
+    },
+    "Piece": ""
+  },
+  "EchangeurEtageId": "etage-2",
+  "PlenumExtractionEtageId": "etage-2",
+  "PlenumInsufflationEtageId": "etage-2"
+}

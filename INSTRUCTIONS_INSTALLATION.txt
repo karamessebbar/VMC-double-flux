@@ -1,0 +1,158 @@
+╔═══════════════════════════════════════════════════════════════════╗
+║                                                                   ║
+║     VMC DOUBLE FLUX - APPLICATION PROFESSIONNELLE                 ║
+║     Projet .NET - M1 Informatique 2025/2026                       ║
+║                                                                   ║
+╚═══════════════════════════════════════════════════════════════════╝
+
+📦 INSTALLATION SUR UBUNTU
+═══════════════════════════════════════════════════════════════════
+
+ÉTAPE 1: Installer .NET 8.0 SDK
+────────────────────────────────────────────────────────────────────
+
+Option A - Via script officiel (recommandé):
+
+  wget https://dot.net/v1/dotnet-install.sh
+  chmod +x dotnet-install.sh
+  ./dotnet-install.sh --channel 8.0
+  export PATH="$PATH:$HOME/.dotnet"
+  echo 'export PATH="$PATH:$HOME/.dotnet"' >> ~/.bashrc
+  source ~/.bashrc
+
+Option B - Via APT (Ubuntu 22.04+):
+
+  sudo apt-get update
+  sudo apt-get install -y dotnet-sdk-8.0
+
+Vérification:
+
+  dotnet --version
+  # Doit afficher: 8.0.x
+
+
+ÉTAPE 2: Lancer l'application
+────────────────────────────────────────────────────────────────────
+
+  cd VMCDoubleFlux
+  ./run.sh
+
+L'application se compile et se lance automatiquement !
+
+
+🚀 DÉMARRAGE RAPIDE
+═══════════════════════════════════════════════════════════════════
+
+1. Créer un étage
+   └─ Panneau gauche → "+ Ajouter Étage"
+
+2. Placer des bouches VMC
+   └─ Cliquer "● Extraction" ou "● Insufflation"
+   └─ Cliquer sur le plan pour placer
+
+3. Éditer une bouche
+   └─ Mode "✓ Sélection"
+   └─ Cliquer sur une bouche
+   └─ Modifier dans le panneau de droite
+
+4. Consulter le bilan
+   └─ Cliquer "AFFICHER BILAN"
+
+5. Sauvegarder
+   └─ Cliquer "EXPORTER JSON"
+
+
+📚 DOCUMENTATION COMPLÈTE
+═══════════════════════════════════════════════════════════════════
+
+README.md              → Guide complet
+GUIDE_RAPIDE.md        → Démarrage en 5 minutes
+ARCHITECTURE.md        → Architecture technique
+FONCTIONNALITES.md     → Liste des fonctionnalités
+exemple-projet.json    → Projet d'exemple à importer
+
+
+🎨 LÉGENDE DES COULEURS
+═══════════════════════════════════════════════════════════════════
+
+🔴 ROUGE         → Extraction (air vicié sortant)
+🟠 ORANGE        → Insufflation (air neuf entrant)
+🔵 BLEU          → Porte (circulation d'air)
+🔵 BLEU CLAIR    → Fenêtre (aération naturelle)
+🟢 VERT          → Caisson VMC Double Flux (central)
+
+
+💡 CONSEILS D'UTILISATION
+═══════════════════════════════════════════════════════════════════
+
+Débits recommandés:
+  • Cuisine: 45-135 m³/h (extraction)
+  • Salle de bain: 45-105 m³/h (extraction)
+  • WC: 30 m³/h (extraction)
+  • Chambre: 30 m³/h (insufflation)
+  • Salon: 30-45 m³/h (insufflation)
+
+Diamètres standards:
+  • 80 mm: WC, petites pièces
+  • 125 mm: Standard (chambres, cuisine)
+  • 150 mm: Grandes pièces (salon)
+
+Équilibrage:
+  • Débit extraction ≈ Débit insufflation
+  • Tolérance: ±5 m³/h
+
+
+🔧 DÉPANNAGE
+═══════════════════════════════════════════════════════════════════
+
+Problème: "dotnet: command not found"
+Solution:
+  export PATH="$PATH:$HOME/.dotnet"
+
+Problème: Erreur de compilation
+Solution:
+  cd VMCDoubleFlux
+  dotnet clean
+  dotnet restore
+  dotnet build
+
+Problème: Fenêtre ne s'affiche pas
+Solution:
+  export DISPLAY=:0
+
+
+📝 FONCTIONNALITÉS PRINCIPALES
+═══════════════════════════════════════════════════════════════════
+
+✅ Modélisation d'étages multiples
+✅ Placement interactif des bouches VMC
+✅ Configuration: nom, diamètre, débit, type
+✅ Vue graphique avec grille métrique
+✅ Calcul automatique du bilan aéraulique
+✅ Vérification de l'équilibre
+✅ Sauvegarde/Chargement JSON
+✅ Glisser-déposer des bouches
+✅ Traçage de murs intérieurs
+✅ Portes et fenêtres
+
+
+🎓 CONTEXTE ACADÉMIQUE
+═══════════════════════════════════════════════════════════════════
+
+Projet: M1 Informatique 2025/2026
+Professeur: B. MARTIN
+Cours: Projet .NET
+Technologies: .NET 8.0 + Avalonia UI 11.0
+
+
+📞 SUPPORT
+═══════════════════════════════════════════════════════════════════
+
+Consultez la documentation complète dans README.md
+
+Pour les questions académiques, contactez B. MARTIN
+
+
+═══════════════════════════════════════════════════════════════════
+Développé pour le cours de Projet .NET - M1 Informatique 🚀
+═══════════════════════════════════════════════════════════════════

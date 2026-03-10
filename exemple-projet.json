@@ -1,0 +1,322 @@
+{
+  "Nom": "Maison Familiale - VMC Double Flux",
+  "Description": "Projet complet de VMC pour une maison de 2 étages",
+  "Echelle": 50,
+  "EtageActifId": "etage-1",
+  "Etages": [
+    {
+      "Id": "etage-1",
+      "Nom": "Rez-de-Chaussée",
+      "Largeur": 15.0,
+      "Hauteur": 12.0,
+      "Murs": [
+        {
+          "Id": "mur-1",
+          "Debut": { "X": 0.0, "Y": 0.0 },
+          "Fin": { "X": 15.0, "Y": 0.0 },
+          "EstExterieur": true
+        },
+        {
+          "Id": "mur-2",
+          "Debut": { "X": 15.0, "Y": 0.0 },
+          "Fin": { "X": 15.0, "Y": 12.0 },
+          "EstExterieur": true
+        },
+        {
+          "Id": "mur-3",
+          "Debut": { "X": 15.0, "Y": 12.0 },
+          "Fin": { "X": 0.0, "Y": 12.0 },
+          "EstExterieur": true
+        },
+        {
+          "Id": "mur-4",
+          "Debut": { "X": 0.0, "Y": 12.0 },
+          "Fin": { "X": 0.0, "Y": 0.0 },
+          "EstExterieur": true
+        },
+        {
+          "Id": "mur-5",
+          "Debut": { "X": 5.0, "Y": 0.0 },
+          "Fin": { "X": 5.0, "Y": 6.0 },
+          "EstExterieur": false
+        },
+        {
+          "Id": "mur-6",
+          "Debut": { "X": 0.0, "Y": 6.0 },
+          "Fin": { "X": 10.0, "Y": 6.0 },
+          "EstExterieur": false
+        },
+        {
+          "Id": "mur-7",
+          "Debut": { "X": 10.0, "Y": 0.0 },
+          "Fin": { "X": 10.0, "Y": 12.0 },
+          "EstExterieur": false
+        },
+        {
+          "Id": "mur-8",
+          "Debut": { "X": 10.0, "Y": 8.0 },
+          "Fin": { "X": 15.0, "Y": 8.0 },
+          "EstExterieur": false
+        }
+      ],
+      "Bouches": [
+        {
+          "Id": "bouche-1",
+          "Nom": "CUISINE",
+          "Type": "Extraction",
+          "Position": { "X": 2.5, "Y": 3.0 },
+          "Diametre": 125,
+          "Debit": 75,
+          "Piece": "Cuisine"
+        },
+        {
+          "Id": "bouche-2",
+          "Nom": "WC RDC",
+          "Type": "Extraction",
+          "Position": { "X": 7.5, "Y": 3.0 },
+          "Diametre": 80,
+          "Debit": 30,
+          "Piece": "WC"
+        },
+        {
+          "Id": "bouche-3",
+          "Nom": "SALON",
+          "Type": "Insufflation",
+          "Position": { "X": 12.5, "Y": 4.0 },
+          "Diametre": 150,
+          "Debit": 60,
+          "Piece": "Salon"
+        },
+        {
+          "Id": "bouche-4",
+          "Nom": "ENTREE",
+          "Type": "Insufflation",
+          "Position": { "X": 2.5, "Y": 9.0 },
+          "Diametre": 125,
+          "Debit": 45,
+          "Piece": "Entrée"
+        },
+        {
+          "Id": "porte-1",
+          "Nom": "PORTE ENTREE",
+          "Type": "Porte",
+          "Position": { "X": 0.5, "Y": 12.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Entrée"
+        },
+        {
+          "Id": "porte-2",
+          "Nom": "PORTE CUISINE",
+          "Type": "Porte",
+          "Position": { "X": 5.0, "Y": 4.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Cuisine"
+        },
+        {
+          "Id": "fenetre-1",
+          "Nom": "FENETRE SALON",
+          "Type": "Fenetre",
+          "Position": { "X": 15.0, "Y": 3.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Salon"
+        },
+        {
+          "Id": "fenetre-2",
+          "Nom": "FENETRE CUISINE",
+          "Type": "Fenetre",
+          "Position": { "X": 2.5, "Y": 0.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Cuisine"
+        },
+        {
+          "Id": "fenetre-3",
+          "Nom": "FENETRE SEJOUR",
+          "Type": "Fenetre",
+          "Position": { "X": 12.5, "Y": 12.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Séjour"
+        }
+      ]
+    },
+    {
+      "Id": "etage-2",
+      "Nom": "Étage",
+      "Largeur": 15.0,
+      "Hauteur": 12.0,
+      "Murs": [
+        {
+          "Id": "mur-e1",
+          "Debut": { "X": 0.0, "Y": 0.0 },
+          "Fin": { "X": 15.0, "Y": 0.0 },
+          "EstExterieur": true
+        },
+        {
+          "Id": "mur-e2",
+          "Debut": { "X": 15.0, "Y": 0.0 },
+          "Fin": { "X": 15.0, "Y": 12.0 },
+          "EstExterieur": true
+        },
+        {
+          "Id": "mur-e3",
+          "Debut": { "X": 15.0, "Y": 12.0 },
+          "Fin": { "X": 0.0, "Y": 12.0 },
+          "EstExterieur": true
+        },
+        {
+          "Id": "mur-e4",
+          "Debut": { "X": 0.0, "Y": 12.0 },
+          "Fin": { "X": 0.0, "Y": 0.0 },
+          "EstExterieur": true
+        },
+        {
+          "Id": "mur-e5",
+          "Debut": { "X": 0.0, "Y": 6.0 },
+          "Fin": { "X": 7.5, "Y": 6.0 },
+          "EstExterieur": false
+        },
+        {
+          "Id": "mur-e6",
+          "Debut": { "X": 7.5, "Y": 0.0 },
+          "Fin": { "X": 7.5, "Y": 12.0 },
+          "EstExterieur": false
+        },
+        {
+          "Id": "mur-e7",
+          "Debut": { "X": 11.0, "Y": 6.0 },
+          "Fin": { "X": 15.0, "Y": 6.0 },
+          "EstExterieur": false
+        },
+        {
+          "Id": "mur-e8",
+          "Debut": { "X": 11.0, "Y": 0.0 },
+          "Fin": { "X": 11.0, "Y": 12.0 },
+          "EstExterieur": false
+        }
+      ],
+      "Bouches": [
+        {
+          "Id": "bouche-e1",
+          "Nom": "SDB ETAGE",
+          "Type": "Extraction",
+          "Position": { "X": 3.5, "Y": 3.0 },
+          "Diametre": 125,
+          "Debit": 60,
+          "Piece": "Salle de bain"
+        },
+        {
+          "Id": "bouche-e2",
+          "Nom": "WC ETAGE",
+          "Type": "Extraction",
+          "Position": { "X": 3.5, "Y": 9.0 },
+          "Diametre": 80,
+          "Debit": 30,
+          "Piece": "WC"
+        },
+        {
+          "Id": "bouche-e3",
+          "Nom": "CHAMBRE 1",
+          "Type": "Insufflation",
+          "Position": { "X": 9.0, "Y": 3.0 },
+          "Diametre": 125,
+          "Debit": 45,
+          "Piece": "Chambre 1"
+        },
+        {
+          "Id": "bouche-e4",
+          "Nom": "CHAMBRE 2",
+          "Type": "Insufflation",
+          "Position": { "X": 13.0, "Y": 3.0 },
+          "Diametre": 125,
+          "Debit": 45,
+          "Piece": "Chambre 2"
+        },
+        {
+          "Id": "bouche-e5",
+          "Nom": "CHAMBRE 3",
+          "Type": "Insufflation",
+          "Position": { "X": 13.0, "Y": 9.0 },
+          "Diametre": 125,
+          "Debit": 45,
+          "Piece": "Chambre 3"
+        },
+        {
+          "Id": "porte-e1",
+          "Nom": "PORTE SDB",
+          "Type": "Porte",
+          "Position": { "X": 3.5, "Y": 6.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Salle de bain"
+        },
+        {
+          "Id": "porte-e2",
+          "Nom": "PORTE CH1",
+          "Type": "Porte",
+          "Position": { "X": 7.5, "Y": 3.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Chambre 1"
+        },
+        {
+          "Id": "porte-e3",
+          "Nom": "PORTE CH2",
+          "Type": "Porte",
+          "Position": { "X": 11.0, "Y": 3.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Chambre 2"
+        },
+        {
+          "Id": "porte-e4",
+          "Nom": "PORTE CH3",
+          "Type": "Porte",
+          "Position": { "X": 11.0, "Y": 9.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Chambre 3"
+        },
+        {
+          "Id": "fenetre-e1",
+          "Nom": "FENETRE SDB",
+          "Type": "Fenetre",
+          "Position": { "X": 0.0, "Y": 3.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Salle de bain"
+        },
+        {
+          "Id": "fenetre-e2",
+          "Nom": "FENETRE CH1",
+          "Type": "Fenetre",
+          "Position": { "X": 9.0, "Y": 0.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Chambre 1"
+        },
+        {
+          "Id": "fenetre-e3",
+          "Nom": "FENETRE CH2",
+          "Type": "Fenetre",
+          "Position": { "X": 13.0, "Y": 0.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Chambre 2"
+        },
+        {
+          "Id": "fenetre-e4",
+          "Nom": "FENETRE CH3",
+          "Type": "Fenetre",
+          "Position": { "X": 15.0, "Y": 9.0 },
+          "Diametre": 0,
+          "Debit": 0,
+          "Piece": "Chambre 3"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:controls="clr-namespace:VMCDoubleFlux.Controls"
+        x:Class="VMCDoubleFlux.MainWindow"
+        Width="1200"
+        Height="800"
+        Title="VMC Double Flux">
+
+    <DockPanel>
+
+        <!-- BARRE DE VUES -->
+        <StackPanel DockPanel.Dock="Top"
+                    Orientation="Horizontal"
+                    Spacing="10"
+                    Margin="10">
+
+            <TextBlock Text="Vues :" VerticalAlignment="Center"/>
+
+            <Button Content="Face" Command="{Binding VueFaceCommand}"/>
+<Button Content="Droite" Command="{Binding VueDroiteCommand}"/>
+<Button Content="Gauche" Command="{Binding VueGaucheCommand}"/>
+<Button Content="Derrière" Command="{Binding VueDerriereCommand}"/>
+
+        </StackPanel>
+
+        <!-- ZONE PRINCIPALE -->
+        <controls:VueGraphique x:Name="vueGraphique"/>
+
+    </DockPanel>
+</Window>
