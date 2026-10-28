@@ -2,29 +2,230 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:controls="clr-namespace:VMCDoubleFlux.Controls"
         x:Class="VMCDoubleFlux.MainWindow"
-        Width="1200"
-        Height="800"
-        Title="VMC Double Flux">
+        Width="1400"
+        Height="860"
+        Title="VMC Double Flux — Moteur">
 
-    <DockPanel>
+    <!--
+        Layout global : panneau de contrôle moteur (gauche, 300 px)
+                        + vue graphique (droite, extensible)
+    -->
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
 
-        <!-- BARRE DE VUES -->
-        <StackPanel DockPanel.Dock="Top"
-                    Orientation="Horizontal"
-                    Spacing="10"
-                    Margin="10">
+        <!-- ══════════════════════════════════════════════════════
+             PANNEAU GAUCHE — Contrôle moteur VMC
+             ══════════════════════════════════════════════════════ -->
+        <ScrollViewer Grid.Column="0"
+                      HorizontalScrollBarVisibility="Disabled"
+                      Background="#FF2C3E50">
 
-            <TextBlock Text="Vues :" VerticalAlignment="Center"/>
+            <StackPanel Margin="0 0 0 20">
 
-            <Button Content="Face" Command="{Binding VueFaceCommand}"/>
-<Button Content="Droite" Command="{Binding VueDroiteCommand}"/>
-<Button Content="Gauche" Command="{Binding VueGaucheCommand}"/>
-<Button Content="Derrière" Command="{Binding VueDerriereCommand}"/>
+                <!-- En-tête -->
+                <TextBlock Text="MOTEUR VMC"
+                           Foreground="White"
+                           FontSize="15"
+                           FontWeight="Bold"
+                           Padding="15 14 15 10"/>
 
-        </StackPanel>
+                <!-- ─── Section EXTRACTION ─── -->
+                <TextBlock Text="VENTILATEUR EXTRACTION"
+                           Foreground="#FF95A5A6"
+                           FontSize="11"
+                           FontWeight="Bold"
+                           Padding="15 10 15 4"/>
 
-        <!-- ZONE PRINCIPALE -->
-        <controls:VueGraphique x:Name="vueGraphique"/>
+                <Border Background="#FF34495E"
+                        CornerRadius="6"
+                        Margin="10 4 10 4"
+                        Padding="12 10">
+                    <StackPanel Spacing="6">
 
-    </DockPanel>
+                        <!-- Capacité extraction -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Capacité (m³/h)"
+                                       Foreground="#FFECF0F1"
+                                       VerticalAlignment="Center"/>
+                            <NumericUpDown x:Name="numCapaciteExtraction"
+                                           Grid.Column="1"
+                                           Width="90"
+                                           Minimum="10"
+                                           Maximum="2000"
+                                           Increment="10"
+                                           Value="200"
+                                           FormatString="F0"/>
+                        </Grid>
+
+                        <!-- Barre de charge extraction -->
+                        <TextBlock x:Name="txtDebitExtractionDemande"
+                                   Text="Demandé : — m³/h"
+                                   Foreground="#FFBDC3C7"
+                                   FontSize="11"/>
+                        <ProgressBar x:Name="progressExtraction"
+                                     Minimum="0" Maximum="100"
+                                     Value="0"
+                                     Height="10"
+                                     Foreground="#FFDC3545"
+                                     Background="#FF495C6E"
+                                     CornerRadius="4"/>
+                        <TextBlock x:Name="txtTauxExtraction"
+                                   Text="Charge : 0 %"
+                                   Foreground="#FFBDC3C7"
+                                   FontSize="11"/>
+
+                        <!-- Statut extraction -->
+                        <Border x:Name="bordStatutExtraction"
+                                CornerRadius="4"
+                                Padding="8 5"
+                                Background="#FF1A252F">
+                            <TextBlock x:Name="txtStatutExtraction"
+                                       Text="✅ Normal"
+                                       Foreground="#FF2ECC71"
+                                       FontWeight="Bold"
+                                       FontSize="11"
+                                       TextWrapping="Wrap"/>
+                        </Border>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- ─── Section INSUFFLATION ─── -->
+                <TextBlock Text="VENTILATEUR INSUFFLATION"
+                           Foreground="#FF95A5A6"
+                           FontSize="11"
+                           FontWeight="Bold"
+                           Padding="15 10 15 4"/>
+
+                <Border Background="#FF34495E"
+                        CornerRadius="6"
+                        Margin="10 4 10 4"
+                        Padding="12 10">
+                    <StackPanel Spacing="6">
+
+                        <!-- Capacité insufflation -->
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Text="Capacité (m³/h)"
+                                       Foreground="#FFECF0F1"
+                                       VerticalAlignment="Center"/>
+                            <NumericUpDown x:Name="numCapaciteInsufflation"
+                                           Grid.Column="1"
+                                           Width="90"
+                                           Minimum="10"
+                                           Maximum="2000"
+                                           Increment="10"
+                                           Value="200"
+                                           FormatString="F0"/>
+                        </Grid>
+
+                        <!-- Barre de charge insufflation -->
+                        <TextBlock x:Name="txtDebitInsufflationDemande"
+                                   Text="Demandé : — m³/h"
+                                   Foreground="#FFBDC3C7"
+                                   FontSize="11"/>
+                        <ProgressBar x:Name="progressInsufflation"
+                                     Minimum="0" Maximum="100"
+                                     Value="0"
+                                     Height="10"
+                                     Foreground="#FF0D6EFD"
+                                     Background="#FF495C6E"
+                                     CornerRadius="4"/>
+                        <TextBlock x:Name="txtTauxInsufflation"
+                                   Text="Charge : 0 %"
+                                   Foreground="#FFBDC3C7"
+                                   FontSize="11"/>
+
+                        <!-- Statut insufflation -->
+                        <Border x:Name="bordStatutInsufflation"
+                                CornerRadius="4"
+                                Padding="8 5"
+                                Background="#FF1A252F">
+                            <TextBlock x:Name="txtStatutInsufflation"
+                                       Text="✅ Normal"
+                                       Foreground="#FF2ECC71"
+                                       FontWeight="Bold"
+                                       FontSize="11"
+                                       TextWrapping="Wrap"/>
+                        </Border>
+
+                    </StackPanel>
+                </Border>
+
+                <!-- ─── Statut global ─── -->
+                <TextBlock Text="STATUT GLOBAL"
+                           Foreground="#FF95A5A6"
+                           FontSize="11"
+                           FontWeight="Bold"
+                           Padding="15 10 15 4"/>
+
+                <Border x:Name="bordStatutGlobal"
+                        Background="#FF1A252F"
+                        CornerRadius="6"
+                        Margin="10 4 10 4"
+                        Padding="12 10">
+                    <TextBlock x:Name="txtStatutGlobal"
+                               Text="✅ Système dans les capacités"
+                               Foreground="#FF2ECC71"
+                               FontWeight="Bold"
+                               FontSize="12"
+                               TextWrapping="Wrap"/>
+                </Border>
+
+                <!-- ─── Bouton Recalculer ─── -->
+                <Button x:Name="btnRecalculer"
+                        Content="⟳  RECALCULER"
+                        Background="#FF0078D7"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        Margin="10 10 10 4"
+                        Padding="10 9"
+                        HorizontalAlignment="Stretch"
+                        HorizontalContentAlignment="Center"/>
+
+                <!-- ─── Légende ─── -->
+                <TextBlock Text="LÉGENDE"
+                           Foreground="#FF95A5A6"
+                           FontSize="11"
+                           FontWeight="Bold"
+                           Padding="15 10 15 4"/>
+
+                <Border Background="#FF34495E"
+                        CornerRadius="6"
+                        Margin="10 4 10 4"
+                        Padding="12 8">
+                    <StackPanel Spacing="5">
+                        <TextBlock Foreground="#FF2ECC71" FontSize="11"
+                                   TextWrapping="Wrap"
+                                   Text="✅ Normal — débit dans la capacité"/>
+                        <TextBlock Foreground="#FFFF3B30" FontSize="11"
+                                   TextWrapping="Wrap"
+                                   Text="⛔ Insufflation bloquée — capacité dépassée"/>
+                        <TextBlock Foreground="#FFFF3B30" FontSize="11"
+                                   TextWrapping="Wrap"
+                                   Text="⛔ Extraction bloquée — capacité dépassée, surplus non évacué"/>
+                    </StackPanel>
+                </Border>
+
+            </StackPanel>
+        </ScrollViewer>
+
+        <!-- ══════════════════════════════════════════════════════
+             PANNEAU DROIT — Vue graphique (inchangée)
+             Le moteur n'est PAS dessiné ici.
+             ══════════════════════════════════════════════════════ -->
+        <controls:VueGraphique x:Name="vueGraphique"
+                               Grid.Column="1"/>
+
+    </Grid>
 </Window>

@@ -45,9 +45,25 @@ namespace VMCDoubleFlux.Models
         public string Nom { get; set; }
         public TypeBouche Type { get; set; }
         public double Diametre { get; set; } // en mm
+
+        /// <summary>
+        /// Débit de référence / débit fixe (m³/h).
+        /// Si DebitFixe == true, ce débit est imposé et ne peut pas être redistribué.
+        /// Si DebitFixe == false, ce champ sert de débit initial ; le moteur peut
+        /// le recalculer pour équilibrer les deux côtés.
+        /// </summary>
         public double Debit { get; set; } // en m³/h
+
+        /// <summary>
+        /// Indique si le débit de cette bouche est verrouillé.
+        /// true  → le moteur respecte exactement <see cref="Debit"/>.
+        /// false → le moteur peut ajuster le débit pour équilibrer.
+        /// </summary>
+        public bool DebitFixe { get; set; }
+
         public Point2D Position { get; set; }
         public string Piece { get; set; } // Nom de la pièce
+        public double Rotation { get; set; } // en degrés (0, 90, 180, 270)
 
         public BoucheVMC()
         {
@@ -56,13 +72,16 @@ namespace VMCDoubleFlux.Models
             Type = TypeBouche.Extraction;
             Diametre = 125;
             Debit = 45;
+            DebitFixe = false;
             Position = new Point2D();
             Piece = "";
+            Rotation = 0;
         }
 
         public override string ToString()
         {
-            return $"{Nom} - Ø{Diametre}mm - {Debit}m³/h";
+            var fixeTag = DebitFixe ? " [FIXE]" : "";
+            return $"{Nom} - Ø{Diametre}mm - {Debit}m³/h{fixeTag}";
         }
     }
 
@@ -172,7 +191,6 @@ namespace VMCDoubleFlux.Models
             Murs = new List<Mur>();
             Bouches = new List<BoucheVMC>();
             
-            // Créer les murs extérieurs
             CreerMursExterieurs();
         }
 
@@ -182,65 +200,22 @@ namespace VMCDoubleFlux.Models
             Largeur = largeur;
             Hauteur = hauteur;
             
-            // Recréer les murs avec les nouvelles dimensions
             Murs.Clear();
             CreerMursExterieurs();
         }
 
         private void CreerMursExterieurs()
         {
-            // Mur haut
-            Murs.Add(new Mur
-            {
-                Debut = new Point2D(0, 0),
-                Fin = new Point2D(Largeur, 0),
-                EstExterieur = true
-            });
-
-            // Mur droit
-            Murs.Add(new Mur
-            {
-                Debut = new Point2D(Largeur, 0),
-                Fin = new Point2D(Largeur, Hauteur),
-                EstExterieur = true
-            });
-
-            // Mur bas
-            Murs.Add(new Mur
-            {
-                Debut = new Point2D(Largeur, Hauteur),
-                Fin = new Point2D(0, Hauteur),
-                EstExterieur = true
-            });
-
-            // Mur gauche
-            Murs.Add(new Mur
-            {
-                Debut = new Point2D(0, Hauteur),
-                Fin = new Point2D(0, 0),
-                EstExterieur = true
-            });
+            Murs.Add(new Mur { Debut = new Point2D(0, 0),          Fin = new Point2D(Largeur, 0),       EstExterieur = true });
+            Murs.Add(new Mur { Debut = new Point2D(Largeur, 0),     Fin = new Point2D(Largeur, Hauteur), EstExterieur = true });
+            Murs.Add(new Mur { Debut = new Point2D(Largeur, Hauteur), Fin = new Point2D(0, Hauteur),     EstExterieur = true });
+            Murs.Add(new Mur { Debut = new Point2D(0, Hauteur),     Fin = new Point2D(0, 0),             EstExterieur = true });
         }
 
-        public void AjouterBouche(BoucheVMC bouche)
-        {
-            Bouches.Add(bouche);
-        }
-
-        public void SupprimerBouche(string boucheId)
-        {
-            Bouches.RemoveAll(b => b.Id == boucheId);
-        }
-
-        public void AjouterMur(Mur mur)
-        {
-            Murs.Add(mur);
-        }
-
-        public void SupprimerMur(string murId)
-        {
-            Murs.RemoveAll(m => m.Id == murId && !m.EstExterieur);
-        }
+        public void AjouterBouche(BoucheVMC bouche)  => Bouches.Add(bouche);
+        public void SupprimerBouche(string boucheId) => Bouches.RemoveAll(b => b.Id == boucheId);
+        public void AjouterMur(Mur mur)              => Murs.Add(mur);
+        public void SupprimerMur(string murId)       => Murs.RemoveAll(m => m.Id == murId && !m.EstExterieur);
 
         /// <summary>
         /// Calcule le bilan aéraulique de cet étage
@@ -253,18 +228,10 @@ namespace VMCDoubleFlux.Models
             {
                 switch (bouche.Type)
                 {
-                    case TypeBouche.Extraction:
-                        bilan.BouchesExtraction.Add(bouche);
-                        break;
-                    case TypeBouche.Insufflation:
-                        bilan.BouchesInsufflation.Add(bouche);
-                        break;
-                    case TypeBouche.Porte:
-                        bilan.Portes.Add(bouche);
-                        break;
-                    case TypeBouche.Fenetre:
-                        bilan.Fenetres.Add(bouche);
-                        break;
+                    case TypeBouche.Extraction:   bilan.BouchesExtraction.Add(bouche);   break;
+                    case TypeBouche.Insufflation: bilan.BouchesInsufflation.Add(bouche); break;
+                    case TypeBouche.Porte:        bilan.Portes.Add(bouche);              break;
+                    case TypeBouche.Fenetre:      bilan.Fenetres.Add(bouche);            break;
                 }
             }
 
@@ -282,12 +249,10 @@ namespace VMCDoubleFlux.Models
         public List<Etage> Etages { get; set; }
         public string EtageActifId { get; set; }
 
-        // ✅ Éléments VMC uniques pour toute la maison
         public BoucheVMC? Echangeur { get; set; }
         public BoucheVMC? PlenumExtraction { get; set; }
         public BoucheVMC? PlenumInsufflation { get; set; }
 
-        // ID de l'étage où se trouvent les éléments uniques
         public string? EchangeurEtageId { get; set; }
         public string? PlenumExtractionEtageId { get; set; }
         public string? PlenumInsufflationEtageId { get; set; }
@@ -295,10 +260,9 @@ namespace VMCDoubleFlux.Models
         public ProjetVMC()
         {
             Nom = "Nouveau projet VMC";
-            Echelle = 50.0; // 50 pixels = 1 mètre
+            Echelle = 50.0;
             Etages = new List<Etage>();
             
-            // Créer un étage par défaut
             var etageDefaut = new Etage("Rez-de-chaussee", 15.0, 12.0);
             Etages.Add(etageDefaut);
             EtageActifId = etageDefaut.Id;
@@ -311,26 +275,17 @@ namespace VMCDoubleFlux.Models
             set => EtageActifId = value?.Id ?? "";
         }
 
-        public void AjouterEtage(Etage etage)
-        {
-            Etages.Add(etage);
-        }
-
+        public void AjouterEtage(Etage etage)   => Etages.Add(etage);
         public void SupprimerEtage(string etageId)
         {
             if (Etages.Count > 1)
             {
                 Etages.RemoveAll(e => e.Id == etageId);
                 if (EtageActifId == etageId && Etages.Count > 0)
-                {
                     EtageActifId = Etages[0].Id;
-                }
             }
         }
 
-        /// <summary>
-        /// Définit l'échangeur (1 seul autorisé)
-        /// </summary>
         public bool DefinirEchangeur(BoucheVMC echangeur, string etageId)
         {
             Echangeur = echangeur;
@@ -338,9 +293,6 @@ namespace VMCDoubleFlux.Models
             return true;
         }
 
-        /// <summary>
-        /// Définit le plenum d'extraction (1 seul autorisé)
-        /// </summary>
         public bool DefinirPlenumExtraction(BoucheVMC plenum, string etageId)
         {
             PlenumExtraction = plenum;
@@ -348,9 +300,6 @@ namespace VMCDoubleFlux.Models
             return true;
         }
 
-        /// <summary>
-        /// Définit le plenum d'insufflation (1 seul autorisé)
-        /// </summary>
         public bool DefinirPlenumInsufflation(BoucheVMC plenum, string etageId)
         {
             PlenumInsufflation = plenum;
@@ -365,48 +314,29 @@ namespace VMCDoubleFlux.Models
         {
             var bilan = new BilanAeraulique
             {
-                Echangeur = Echangeur,
-                PlenumExtraction = PlenumExtraction,
+                Echangeur          = Echangeur,
+                PlenumExtraction   = PlenumExtraction,
                 PlenumInsufflation = PlenumInsufflation
             };
 
-            // Calculer les bilans par étage
             foreach (var etage in Etages)
             {
                 var bilanEtage = etage.CalculerBilan();
                 bilan.BilansEtages.Add(bilanEtage);
 
-                // Ajouter au bilan global
                 foreach (var bouche in etage.Bouches)
-                {
                     bilan.AjouterBouche(bouche);
-                }
             }
 
             return bilan;
         }
 
-        /// <summary>
-        /// Sauvegarde le projet au format JSON
-        /// </summary>
-        public string SauvegarderJson()
-        {
-            return JsonConvert.SerializeObject(this, Formatting.Indented);
-        }
+        public string SauvegarderJson() => JsonConvert.SerializeObject(this, Formatting.Indented);
 
-        /// <summary>
-        /// Charge un projet depuis JSON
-        /// </summary>
         public static ProjetVMC? ChargerJson(string json)
         {
-            try
-            {
-                return JsonConvert.DeserializeObject<ProjetVMC>(json);
-            }
-            catch
-            {
-                return null;
-            }
+            try   { return JsonConvert.DeserializeObject<ProjetVMC>(json); }
+            catch { return null; }
         }
     }
 
@@ -420,12 +350,10 @@ namespace VMCDoubleFlux.Models
         public List<BoucheVMC> Portes { get; set; }
         public List<BoucheVMC> Fenetres { get; set; }
 
-        // ✅ Éléments VMC uniques
         public BoucheVMC? Echangeur { get; set; }
         public BoucheVMC? PlenumExtraction { get; set; }
         public BoucheVMC? PlenumInsufflation { get; set; }
 
-        // ✅ Bilans par étage
         public List<BilanEtage> BilansEtages { get; set; }
 
         public double DebitTotalExtraction { get; set; }
@@ -434,10 +362,10 @@ namespace VMCDoubleFlux.Models
 
         public BilanAeraulique()
         {
-            BouchesExtraction = new List<BoucheVMC>();
+            BouchesExtraction   = new List<BoucheVMC>();
             BouchesInsufflation = new List<BoucheVMC>();
-            Portes = new List<BoucheVMC>();
-            Fenetres = new List<BoucheVMC>();
+            Portes    = new List<BoucheVMC>();
+            Fenetres  = new List<BoucheVMC>();
             BilansEtages = new List<BilanEtage>();
         }
 
@@ -455,13 +383,8 @@ namespace VMCDoubleFlux.Models
                     DebitTotalInsufflation += bouche.Debit;
                     NombreTotalBouches++;
                     break;
-                case TypeBouche.Porte:
-                    Portes.Add(bouche);
-                    break;
-                case TypeBouche.Fenetre:
-                    Fenetres.Add(bouche);
-                    break;
-                // Les éléments uniques ne sont pas comptés ici
+                case TypeBouche.Porte:   Portes.Add(bouche);   break;
+                case TypeBouche.Fenetre: Fenetres.Add(bouche); break;
                 case TypeBouche.Echangeur:
                 case TypeBouche.PlenumExtraction:
                 case TypeBouche.PlenumInsufflation:
@@ -471,8 +394,7 @@ namespace VMCDoubleFlux.Models
 
         public bool EstEquilibre()
         {
-            double diff = Math.Abs(DebitTotalExtraction - DebitTotalInsufflation);
-            return diff < 5.0; // Tolérance de 5 m³/h
+            return Math.Abs(DebitTotalExtraction - DebitTotalInsufflation) < 5.0;
         }
 
         public bool SystemeComplet()

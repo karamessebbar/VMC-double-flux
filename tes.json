@@ -1,16 +1,16 @@
 {
   "Nom": "Maison Familiale - VMC Double Flux",
-  "Echelle": 55.0,
+  "Echelle": 50.0,
   "Etages": [
     {
       "Id": "etage-1",
-      "Nom": "Rez-de-Chaussée",
+      "Nom": "Rez-de-chaussee",
       "Largeur": 15.0,
       "Hauteur": 12.0,
       "HauteurSousPlafond": 2.5,
       "Murs": [
         {
-          "Id": "77f2beca-d93a-4b92-9f0e-8b71bbd9f1d5",
+          "Id": "3f56fc27-b49f-4d47-ab31-a95621445b9f",
           "Debut": {
             "X": 0.0,
             "Y": 0.0
@@ -26,7 +26,7 @@
           "Longueur": 15.0
         },
         {
-          "Id": "45bb2769-5f4e-44e4-956c-364dc53b903a",
+          "Id": "97a3069f-44a8-408e-b164-f52151905384",
           "Debut": {
             "X": 15.0,
             "Y": 0.0
@@ -42,7 +42,7 @@
           "Longueur": 12.0
         },
         {
-          "Id": "5c318fe5-7ee9-467f-9bda-71105866f61d",
+          "Id": "fdab22e0-3771-4e81-8b60-02b97a9cc030",
           "Debut": {
             "X": 15.0,
             "Y": 12.0
@@ -58,7 +58,71 @@
           "Longueur": 15.0
         },
         {
-          "Id": "d761245b-c2e2-42a0-b2c0-99aa3c5c0fda",
+          "Id": "dcfe3dc6-82cf-4356-b327-33342922e09c",
+          "Debut": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "5f08db20-b0d8-47dd-8f8c-903b5d50b484",
+          "Debut": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "93f8823a-86af-42a4-95b3-02c9f98cb69e",
+          "Debut": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "201a3f05-ecf9-49a6-84ff-d8c71a3a64e0",
+          "Debut": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "ce3d0555-0a03-43fd-8828-f835922399f9",
           "Debut": {
             "X": 0.0,
             "Y": 12.0
@@ -209,11 +273,13 @@
           "Type": 0,
           "Diametre": 125.0,
           "Debit": 75.0,
+          "DebitFixe": true,
           "Position": {
             "X": 2.5,
             "Y": 3.0
           },
-          "Piece": "Cuisine"
+          "Piece": "Cuisine",
+          "Rotation": 0.0
         },
         {
           "Id": "bouche-2",
@@ -221,11 +287,13 @@
           "Type": 0,
           "Diametre": 80.0,
           "Debit": 30.0,
+          "DebitFixe": true,
           "Position": {
             "X": 7.5,
             "Y": 3.0
           },
-          "Piece": "WC"
+          "Piece": "WC",
+          "Rotation": 0.0
         },
         {
           "Id": "bouche-3",
@@ -233,11 +301,13 @@
           "Type": 1,
           "Diametre": 150.0,
           "Debit": 60.0,
+          "DebitFixe": true,
           "Position": {
             "X": 12.5,
             "Y": 4.0
           },
-          "Piece": "Salon"
+          "Piece": "Salon",
+          "Rotation": 0.0
         },
         {
           "Id": "bouche-4",
@@ -245,11 +315,13 @@
           "Type": 1,
           "Diametre": 125.0,
           "Debit": 45.0,
+          "DebitFixe": true,
           "Position": {
             "X": 2.5,
             "Y": 9.0
           },
-          "Piece": "Entrée"
+          "Piece": "Entrée",
+          "Rotation": 0.0
         },
         {
           "Id": "porte-1",
@@ -257,23 +329,13 @@
           "Type": 2,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 0.5,
             "Y": 12.0
           },
-          "Piece": "Entrée"
-        },
-        {
-          "Id": "porte-2",
-          "Nom": "PORTE CUISINE",
-          "Type": 2,
-          "Diametre": 0.0,
-          "Debit": 0.0,
-          "Position": {
-            "X": 5.0,
-            "Y": 4.0
-          },
-          "Piece": "Cuisine"
+          "Piece": "Entrée",
+          "Rotation": 0.0
         },
         {
           "Id": "fenetre-1",
@@ -281,11 +343,13 @@
           "Type": 3,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 15.0,
             "Y": 3.0
           },
-          "Piece": "Salon"
+          "Piece": "Salon",
+          "Rotation": 90.0
         },
         {
           "Id": "fenetre-2",
@@ -293,11 +357,13 @@
           "Type": 3,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 2.5,
             "Y": 0.0
           },
-          "Piece": "Cuisine"
+          "Piece": "Cuisine",
+          "Rotation": 0.0
         },
         {
           "Id": "fenetre-3",
@@ -305,23 +371,13 @@
           "Type": 3,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 12.5,
             "Y": 12.0
           },
-          "Piece": "Séjour"
-        },
-        {
-          "Id": "896744ee-2923-4393-a31a-37598f7072a8",
-          "Nom": "Porte",
-          "Type": 2,
-          "Diametre": 150.0,
-          "Debit": 30.0,
-          "Position": {
-            "X": 10.8506787109375,
-            "Y": 7.9628759765625
-          },
-          "Piece": ""
+          "Piece": "Séjour",
+          "Rotation": 0.0
         }
       ]
     },
@@ -333,7 +389,7 @@
       "HauteurSousPlafond": 2.5,
       "Murs": [
         {
-          "Id": "3f0410c8-a355-4556-bdaa-6e1ade40e03c",
+          "Id": "164faac1-5cc9-4ac2-b775-0211a665279c",
           "Debut": {
             "X": 0.0,
             "Y": 0.0
@@ -349,7 +405,7 @@
           "Longueur": 15.0
         },
         {
-          "Id": "04097497-8a69-47fe-9711-402eb6077b23",
+          "Id": "6d18b7ef-77bd-4bf6-b2d7-63b7ea194530",
           "Debut": {
             "X": 15.0,
             "Y": 0.0
@@ -365,7 +421,7 @@
           "Longueur": 12.0
         },
         {
-          "Id": "1ddff566-bd8d-4ddb-88dc-895dba2e706f",
+          "Id": "c3250e7b-a942-4a55-a7d3-291462cd39a7",
           "Debut": {
             "X": 15.0,
             "Y": 12.0
@@ -381,7 +437,71 @@
           "Longueur": 15.0
         },
         {
-          "Id": "2f9aff19-6160-45f5-81ab-d9e18df0682b",
+          "Id": "e986cd64-8e7c-4293-8f0c-eeb3de351ed3",
+          "Debut": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "2ee5ec69-73d2-4e80-8b33-be7bfb50aedb",
+          "Debut": {
+            "X": 0.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "9f115c89-8613-419e-9d19-e7515e2e72bc",
+          "Debut": {
+            "X": 15.0,
+            "Y": 0.0
+          },
+          "Fin": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": false,
+          "EstVertical": true,
+          "Longueur": 12.0
+        },
+        {
+          "Id": "a46cead2-2587-4f5b-9f4f-b515031ff8e6",
+          "Debut": {
+            "X": 15.0,
+            "Y": 12.0
+          },
+          "Fin": {
+            "X": 0.0,
+            "Y": 12.0
+          },
+          "EstExterieur": true,
+          "Ouvertures": [],
+          "EstHorizontal": true,
+          "EstVertical": false,
+          "Longueur": 15.0
+        },
+        {
+          "Id": "10f9aebd-a675-4b5d-ae06-5ed460e158c3",
           "Debut": {
             "X": 0.0,
             "Y": 12.0
@@ -532,11 +652,13 @@
           "Type": 0,
           "Diametre": 125.0,
           "Debit": 60.0,
+          "DebitFixe": true,
           "Position": {
             "X": 3.5,
             "Y": 3.0
           },
-          "Piece": "Salle de bain"
+          "Piece": "Salle de bain",
+          "Rotation": 0.0
         },
         {
           "Id": "bouche-e2",
@@ -544,11 +666,13 @@
           "Type": 0,
           "Diametre": 80.0,
           "Debit": 30.0,
+          "DebitFixe": true,
           "Position": {
             "X": 3.5,
             "Y": 9.0
           },
-          "Piece": "WC"
+          "Piece": "WC",
+          "Rotation": 0.0
         },
         {
           "Id": "bouche-e3",
@@ -556,11 +680,13 @@
           "Type": 1,
           "Diametre": 125.0,
           "Debit": 45.0,
+          "DebitFixe": false,
           "Position": {
             "X": 9.0,
             "Y": 3.0
           },
-          "Piece": "Chambre 1"
+          "Piece": "Chambre 1",
+          "Rotation": 0.0
         },
         {
           "Id": "bouche-e4",
@@ -568,11 +694,13 @@
           "Type": 1,
           "Diametre": 125.0,
           "Debit": 45.0,
+          "DebitFixe": true,
           "Position": {
             "X": 13.0,
             "Y": 3.0
           },
-          "Piece": "Chambre 2"
+          "Piece": "Chambre 2",
+          "Rotation": 0.0
         },
         {
           "Id": "bouche-e5",
@@ -580,11 +708,13 @@
           "Type": 1,
           "Diametre": 125.0,
           "Debit": 45.0,
+          "DebitFixe": true,
           "Position": {
             "X": 13.0,
             "Y": 9.0
           },
-          "Piece": "Chambre 3"
+          "Piece": "Chambre 3",
+          "Rotation": 0.0
         },
         {
           "Id": "porte-e1",
@@ -592,11 +722,13 @@
           "Type": 2,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 3.5,
             "Y": 6.0
           },
-          "Piece": "Salle de bain"
+          "Piece": "Salle de bain",
+          "Rotation": 0.0
         },
         {
           "Id": "porte-e2",
@@ -604,11 +736,13 @@
           "Type": 2,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 7.5,
             "Y": 3.0
           },
-          "Piece": "Chambre 1"
+          "Piece": "Chambre 1",
+          "Rotation": 90.0
         },
         {
           "Id": "porte-e3",
@@ -616,11 +750,13 @@
           "Type": 2,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 11.0,
             "Y": 3.0
           },
-          "Piece": "Chambre 2"
+          "Piece": "Chambre 2",
+          "Rotation": 90.0
         },
         {
           "Id": "porte-e4",
@@ -628,11 +764,27 @@
           "Type": 2,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 11.0,
             "Y": 9.0
           },
-          "Piece": "Chambre 3"
+          "Piece": "Chambre 3",
+          "Rotation": 90.0
+        },
+        {
+          "Id": "fenetre-e1",
+          "Nom": "FENETRE SDB",
+          "Type": 3,
+          "Diametre": 0.0,
+          "Debit": 0.0,
+          "DebitFixe": false,
+          "Position": {
+            "X": 0.0,
+            "Y": 3.0
+          },
+          "Piece": "Salle de bain",
+          "Rotation": 90.0
         },
         {
           "Id": "fenetre-e2",
@@ -640,11 +792,13 @@
           "Type": 3,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 9.0,
             "Y": 0.0
           },
-          "Piece": "Chambre 1"
+          "Piece": "Chambre 1",
+          "Rotation": 0.0
         },
         {
           "Id": "fenetre-e3",
@@ -652,11 +806,13 @@
           "Type": 3,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 13.0,
             "Y": 0.0
           },
-          "Piece": "Chambre 2"
+          "Piece": "Chambre 2",
+          "Rotation": 0.0
         },
         {
           "Id": "fenetre-e4",
@@ -664,65 +820,75 @@
           "Type": 3,
           "Diametre": 0.0,
           "Debit": 0.0,
+          "DebitFixe": false,
           "Position": {
             "X": 15.0,
             "Y": 9.0
           },
-          "Piece": "Chambre 3"
+          "Piece": "Chambre 3",
+          "Rotation": 90.0
         },
         {
-          "Id": "fbe9e37b-f7bc-40c9-93c5-b697753425c0",
-          "Nom": "Fenetre",
-          "Type": 3,
-          "Diametre": 150.0,
-          "Debit": 30.0,
+          "Id": "6a4c0d51-b018-4bf1-b904-69b9e8392f19",
+          "Nom": "Extraction",
+          "Type": 0,
+          "Diametre": 125.0,
+          "Debit": 45.0,
+          "DebitFixe": false,
           "Position": {
-            "X": -0.010621337890625,
-            "Y": 2.9578424072265626
+            "X": 9.47386962890625,
+            "Y": 7.690506591796875
           },
-          "Piece": ""
+          "Piece": "",
+          "Rotation": 0.0
         }
       ]
     }
   ],
   "EtageActifId": "etage-2",
   "Echangeur": {
-    "Id": "4e90cd9c-2bd1-47d6-b653-a19117b5034e",
+    "Id": "7b06a768-3cc4-44fc-94ff-a652b1967a3c",
     "Nom": "Échangeur",
     "Type": 4,
     "Diametre": 0.0,
     "Debit": 0.0,
+    "DebitFixe": false,
     "Position": {
-      "X": 6.703907470703125,
-      "Y": 11.2143115234375
+      "X": 8.972479248046875,
+      "Y": 6.933419189453125
     },
-    "Piece": ""
+    "Piece": "",
+    "Rotation": 0.0
   },
   "PlenumExtraction": {
-    "Id": "9d4834f2-a358-431e-9d67-c01a18eea477",
+    "Id": "30a57470-7815-4ba5-8dc5-5dd982c0a31f",
     "Nom": "Plenum Extraction",
     "Type": 5,
     "Diametre": 0.0,
     "Debit": 0.0,
+    "DebitFixe": false,
     "Position": {
-      "X": 0.650682373046875,
-      "Y": 11.266204833984375
+      "X": 11.023031005859375,
+      "Y": 9.3487158203125
     },
-    "Piece": ""
+    "Piece": "",
+    "Rotation": 0.0
   },
   "PlenumInsufflation": {
-    "Id": "885b4a7a-c8e6-4f85-9f32-d2257507f896",
+    "Id": "47b3061f-932a-42aa-9d6d-d239021852e2",
     "Nom": "Plenum Insufflation",
     "Type": 6,
     "Diametre": 0.0,
     "Debit": 0.0,
+    "DebitFixe": false,
     "Position": {
-      "X": 0.58552490234375,
-      "Y": 6.58509521484375
+      "X": 8.846339111328126,
+      "Y": 10.9480615234375
     },
-    "Piece": ""
+    "Piece": "",
+    "Rotation": 0.0
   },
-  "EchangeurEtageId": "etage-2",
-  "PlenumExtractionEtageId": "etage-2",
-  "PlenumInsufflationEtageId": "etage-2"
+  "EchangeurEtageId": "etage-1",
+  "PlenumExtractionEtageId": "etage-1",
+  "PlenumInsufflationEtageId": "etage-1"
 }
